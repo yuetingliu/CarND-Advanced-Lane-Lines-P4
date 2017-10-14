@@ -1,5 +1,6 @@
 
 
+
 **Advanced Lane Finding Project**
 
 The goals / steps of this project are the following:
@@ -91,16 +92,13 @@ Draw the lane line with the found lane line points and the polynomial coefficien
 
 ### Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-
-Here's a [link to my video result](./project_video_output.mp4)
+#### Here's a [link to my video result](./project_video_output.mp4)
 
 ---
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Of the whole pipeline, I found the lane line thresholding the most important. If the lane line points are not filtered very well in comparison with their surroundings, then lane line searching algorithm will have a hard time locating the real lane line. In this project, I used pure color threshold (V channel of HSV color space), because I found gradient based filters did not work well. But the HSV filter I used did not work well on the challenge video. The problems might include, not limited to, shadows from trees, lighting conditions, or even long white trucks. I expect other color space like LAB or HLS to be also incorporated, or even neural network (if massive data is available) to get a more robust pipeline. In addition, 
+I found visualizing each step to be critically important for identifying the limiting factors. I am happy that Udacity asks for a writeup file (review time for me) and output images for each step in the submission. I learned to solve this specific problem, and also improved the metaskill of solving problems in general. This submission is not the end, but merely a start, I will further tweak the pipeline later to make it more robust.
 
 
