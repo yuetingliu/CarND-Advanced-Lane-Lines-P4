@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./output_images/chessboard_undistort.png "Undistorted"
-[image2]: ./output_images/undistorted "Road Undistorted"
+[image2]: ./output_images/undistorted.png "Road Undistorted"
 [image3]: ./output_images/thresholded.png "Binary Example"
 [image4]: ./output_images/road_transformed.png "Warp Example"
 [image5]: ./output_images/color_fit.png "Fit Visual"
@@ -32,8 +32,7 @@ The goals / steps of this project are the following:
 ### Camera Calibration
 
 ####  Comput the camera matrix and distortion coefficients
-
-The code for this step is contained in the second code cell of the IPython notebook located in "./examples/example.ipynb"   
+ 
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -50,7 +49,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. Filter the lane line points with HSV color thresholds
 
-I used pure color filters to generate a binary image. After some trial and error, I found the HSV's V channel to be the best color filters for both yellow and white lane lines. Besides, it seems LAB B channel and HLS L channel are both helpful 
+I used pure color filters to generate a binary image. After some trial and error, I found the HSV's V channel to be the best color filters for both yellow and white lane lines. Besides, it seems LAB B channel and HLS L channel are both helpful. I will try out later. 
 
 ![alt text][image3]
 
